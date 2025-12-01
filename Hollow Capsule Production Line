@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hollow Capsule Production Line Manufacturing Capability | Shanghai Linbo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Turnkey hollow capsule production line manufacturer in China. From gelatin preparation to capsule forming, drying, sorting and polishing. Full-process equipment manufacturing with in-house machining capability." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #f5f5f5;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    header {
+      background-color: #0f172a;
+      color: #fff;
+      padding: 16px 0;
+      margin-bottom: 24px;
+    }
+    header .logo {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+    }
+    nav {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+    nav a {
+      margin-right: 16px;
+      opacity: 0.8;
+    }
+    nav a:hover { opacity: 1; }
+
+    main {
+      padding-bottom: 40px;
+    }
+
+    /* Hero */
+    .hero {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 32px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+    }
+    .hero-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .hero-subtitle {
+      font-size: 15px;
+      color: #4b5563;
+      margin-bottom: 6px;
+    }
+    .hero-subtitle-cn {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 16px;
+    }
+    .hero-actions {
+      margin-top: 16px;
+    }
+    .btn-primary, .btn-outline {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      margin-right: 12px;
+    }
+    .btn-primary {
+      background-color: #2563eb;
+      color: #fff;
+      border-color: #2563eb;
+    }
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: #2563eb;
+      border-color: #2563eb;
+    }
+    .btn-outline:hover {
+      background-color: #eff6ff;
+    }
+
+    /* Sections */
+    section {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 24px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+    }
+    section h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+    section p {
+      font-size: 14px;
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      padding: 14px 12px;
+      background-color: #f9fafb;
+    }
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+    .card ul {
+      list-style: disc;
+      padding-left: 18px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .list-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .badge {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background-color: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    /* Flow */
+    .flow-list {
+      list-style: decimal;
+      padding-left: 18px;
+      font-size: 14px;
+      color: #4b5563;
+    }
+    .flow-note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    /* Projects */
+    .projects-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .projects-table th,
+    .projects-table td {
+      border: 1px solid #e5e7eb;
+      padding: 8px;
+      text-align: left;
+    }
+    .projects-table th {
+      background-color: #f3f4f6;
+      font-weight: 600;
+    }
+
+    /* Contact */
+    .contact-info p {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #9ca3af;
+      padding: 16px 0 24px;
+    }
+
+    @media (max-width: 600px) {
+      .hero-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="logo">Shanghai Linbo Precision Machinery</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/capsule-production.html">Capsule Production Line</a>
+      <a href="/cnc-machining.html">CNC Machining</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <h1 class="hero-title">Turnkey Hollow Capsule Production Line Manufacturer</h1>
+    <p class="hero-subtitle">
+      From gelatin or HPMC preparation to capsule forming, drying, sorting and polishing – full-process equipment manufacturing with in-house machining capability.
+    </p>
+    <p class="hero-subtitle-cn">
+      一站式硬胶囊生产线设备制造商，从胶液配制到成型、干燥、筛选、抛光，全流程自制。
+    </p>
+    <div class="hero-actions">
+      <a href="mailto:info@yourdomain.com?subject=Capsule%20Production%20Line%20Inquiry" class="btn-primary">Get Quotation</a>
+      <a href="/download/capsule-line-catalogue.pdf" class="btn-outline">Download Product Catalogue (PDF)</a>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products">
+    <h2>Capsule Production Equipment Portfolio</h2>
+    <p>
+      We provide a complete range of equipment for hard capsule manufacturing, covering key processes from gelatin or HPMC preparation to final capsule inspection and packaging.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Hard Capsule Production Line</h3>
+        <ul>
+          <li>Automatic capsule forming machine</li>
+          <li>Capsule cutting and trimming devices</li>
+          <li>Capsule drying system (tumbling & tray drying)</li>
+          <li>Automatic capsule sorting machine</li>
+          <li>Capsule polishing machine</li>
+          <li>Custom capsule tooling & moulds</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Gelatin & HPMC Preparation System</h3>
+        <ul>
+          <li>Gelatin melting tanks with temperature control</li>
+          <li>HPMC solution preparation units</li>
+          <li>Agitation and dosing systems</li>
+          <li>Filtration and degassing modules</li>
+          <li>Automated feeding to dipping tank</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Auxiliary & Downstream Equipment</h3>
+        <ul>
+          <li>Capsule conveying and buffering units</li>
+          <li>On-line weight checking & inspection</li>
+          <li>Simple packaging & counting devices</li>
+          <li>Special-purpose fixtures and tools</li>
+          <li>Customized integration with existing lines</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="list-inline">
+      <span class="badge">hard capsule production line</span>
+      <span class="badge">empty capsule making machine</span>
+      <span class="badge">capsule drying machine</span>
+      <span class="badge">capsule sorting and polishing</span>
+      <span class="badge">gelatin preparation tank</span>
+      <span class="badge">HPMC capsule equipment</span>
+    </div>
+  </section>
+
+  <!-- Advantages -->
+  <section id="advantages">
+    <h2>Why Choose Our Capsule Production Line</h2>
+    <p>
+      By combining our in-house machining capability with capsule process know-how, we provide stable, cost-effective capsule production solutions for customers worldwide.
+    </p>
+    <ul class="flow-list">
+      <li><strong>20+ years of precision manufacturing</strong> – core structures and tooling are produced in our own factory in Lanzhou.</li>
+      <li><strong>Full-process in-house machining</strong> – from frames and shafts to mould pins and bushings, key parts are controlled by us.</li>
+      <li><strong>Flexible customization</strong> – capacity, layout and configuration can be tailored to your plant and budget.</li>
+      <li><strong>Global export experience</strong> – projects delivered to Asia, Middle East, Africa and Latin America.</li>
+      <li><strong>Quality-focused</strong> – dimensional accuracy, stability and maintainability are prioritized in design and fabrication.</li>
+    </ul>
+  </section>
+
+  <!-- Production Flow -->
+  <section id="flow">
+    <h2>Hard Capsule Production Flow</h2>
+    <p>The typical process of a hard capsule production line includes the following steps:</p>
+    <ol class="flow-list">
+      <li>Gelatin / HPMC preparation</li>
+      <li>Dipping & capsule forming</li>
+      <li>Trimming and cutting</li>
+      <li>Drying (tumbling / tray)</li>
+      <li>Sorting and defect removal</li>
+      <li>Polishing</li>
+      <li>Counting and packaging</li>
+    </ol>
+    <p class="flow-note">
+      Our equipment is designed to balance capacity, stability and energy consumption, making it suitable for both new plants and line upgrades.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Selected Reference Projects</h2>
+    <p>
+      We support capsule manufacturers, pharmaceutical companies, CDMO and nutraceutical producers with tailored equipment and line upgrades.
+    </p>
+    <table class="projects-table">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Region</th>
+          <th>Scope</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2024</td>
+          <td>Southeast Asia</td>
+          <td>2 sets of hard capsule production lines – forming, drying, sorting and polishing</td>
+        </tr>
+        <tr>
+          <td>2023</td>
+          <td>Middle East</td>
+          <td>Capsule sorting and polishing units integrated into existing production line</td>
+        </tr>
+        <tr>
+          <td>2022</td>
+          <td>Africa</td>
+          <td>Capsule drying and upgrading of legacy lines to improve stability and output</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact for Capsule Production Line Solutions</h2>
+    <p>
+      If you are planning to build a new capsule plant or upgrade your existing production line, feel free to contact us with your capacity target and site information.
+    </p>
+    <div class="contact-info">
+      <p><strong>Company:</strong> Shanghai Linbo International Trade Co., Ltd.</p>
+      <p><strong>Factory:</strong> Lanzhou, Gansu – precision machining and assembly base</p>
+      <p><strong>Email:</strong> <a href="mailto:info@yourdomain.com">info@yourdomain.com</a></p>
+      <p><strong>WhatsApp / WeChat:</strong> +86-XXXXXXXXXXX</p>
+      <p><strong>Send us:</strong> your expected capacity (capsules/hour), plant size and country – we will prepare a basic proposal for you.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Shanghai Linbo. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
