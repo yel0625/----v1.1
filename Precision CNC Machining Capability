@@ -291,4 +291,76 @@
 
   <!-- Industries -->
   <section id="industries">
-    <h2>Industries and Typi
+    <h2>Industries and Typical Applications</h2>
+    <p>
+      Our machining capability supports both our own capsule production line equipment and external customers in different industries.
+    </p>
+    <ul class="gallery-list">
+      <li>Pharmaceutical and capsule manufacturing – capsule moulds, pins, bushings, frames and stainless structures</li>
+      <li>Food and beverage machinery – structural parts and support components</li>
+      <li>Automation and robotics – brackets, plates, connector housings and motion components</li>
+      <li>Precision equipment – fixtures, base plates and custom tooling</li>
+      <li>OEM custom mechanical parts based on drawings</li>
+    </ul>
+  </section>
+
+  <!-- Gallery / Sample Parts -->
+  <section id="gallery">
+    <h2>Sample Machined Parts</h2>
+    <p>
+      Below are examples of typical parts we machine. Actual photos can be added here on your website to better showcase surface quality and complexity.
+    </p>
+    <ul class="gallery-list">
+      <li>Capsule mould segments and tooling for hard capsule production</li>
+      <li>Aluminum housings and covers for machinery</li>
+      <li>Precision shafts, bushings and flanges</li>
+      <li>Custom fixtures for assembly and inspection</li>
+      <li>Base plates and welded frames for equipment</li>
+    </ul>
+  </section>
+
+  <!-- Quality -->
+  <section id="quality">
+    <h2>Quality Assurance</h2>
+    <p>
+      Quality and dimensional accuracy are at the center of our machining service. We understand that many parts we produce will be used in pharmaceutical or high-reliability equipment.
+    </p>
+    <ul class="gallery-list">
+      <li>Typical dimensional accuracy: ±0.01 mm for standard machining parts</li>
+      <li>100% inspection for key dimensions and mating features</li>
+      <li>Measurement tools calibrated regularly</li>
+      <li>Inspection reports available for batch orders on request</li>
+      <li>Stable cooperation with repeat customers for long-term projects</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Send Your Drawings for a Fast Quotation</h2>
+    <p>
+      We welcome machining inquiries from capsule manufacturers, equipment makers, integrators and trading companies. Please send us your drawings with material, quantity and tolerance requirements.
+    </p>
+    <p>
+      欢迎发送图纸（格式可为 STEP、IGES、PDF 等），注明材质、数量和精度要求，我们将尽快为您报价。
+    </p>
+    <div class="badge-row">
+      <span class="badge">CNC machining service China</span>
+      <span class="badge">custom machining parts</span>
+      <span class="badge">pharmaceutical machine parts machining</span>
+      <span class="badge">OEM machining supplier</span>
+    </div>
+    <p><strong>Email:</strong> <a href="mailto:info@yourdomain.com">info@yourdomain.com</a></p>
+    <p><strong>WhatsApp / WeChat:</strong> +86-XXXXXXXXXXX</p>
+    <p><strong>Location:</strong> Lanzhou, Gansu Province, China</p>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Shanghai Linbo. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
