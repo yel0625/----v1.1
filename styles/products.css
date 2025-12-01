@@ -1,0 +1,138 @@
+/* 产品页面特定样式 */
+.page-banner {
+    margin-top: 80px;
+    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/banner-products.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.page-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.product-category {
+    margin: 4rem 0;
+}
+
+.product-category h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.product-category h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background-color: var(--primary-color);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.product-info p {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+.features {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.features li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+}
+
+.features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.btn-detail {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-detail:hover {
+    background-color: #163c7a;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .page-banner {
+        padding: 3rem 1rem;
+    }
+
+    .page-banner h1 {
+        font-size: 2rem;
+    }
+
+    .product-category h2 {
+        font-size: 1.8rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+} 

@@ -1,0 +1,165 @@
+/* 历史沿革页面样式 */
+.page-banner {
+    margin-top: 80px;
+    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/banner-history.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.page-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* 时间线样式 */
+.history-timeline {
+    padding: 4rem 0;
+    background-color: var(--secondary-color);
+}
+
+.timeline-wrapper {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.central-line {
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 100%;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.timeline-content {
+    width: calc(50% - 50px);
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+}
+
+/* 左侧时间线项目 */
+.timeline-item.left .timeline-content {
+    margin-right: auto;
+}
+
+.timeline-item.left .timeline-content::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 10px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+/* 右侧时间线项目 */
+.timeline-item.right .timeline-content {
+    margin-left: auto;
+}
+
+.timeline-item.right .timeline-content::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right: 10px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.year {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.content p {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+.achievements {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.achievements li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+}
+
+.achievements li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .central-line {
+        left: 20px;
+    }
+
+    .timeline-item::after {
+        left: 20px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 50px);
+        margin-left: 40px !important;
+    }
+
+    .timeline-item.left .timeline-content::after,
+    .timeline-item.right .timeline-content::after {
+        left: -10px;
+        border-right: 10px solid white;
+        border-left: none;
+    }
+
+    .year {
+        font-size: 1.8rem;
+    }
+} 

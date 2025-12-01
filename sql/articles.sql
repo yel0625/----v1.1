@@ -1,0 +1,1 @@
+ALTER TABLE articles ADD COLUMN category ENUM('技术文章','行业动态','政策法规') NOT NULL DEFAULT '技术文章';

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Gansu Qilin Intelligent Equipment Co., Ltd</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/contact.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Логотип Qilin Intelligent Equipment">
+                <span class="logo-text">Gansu Qilin Intelligent Equipment</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="products.html">Продукция</a></li>
+                <li><a href="history.html">История</a></li>
+                <li><a href="technology.html">Технологии</a></li>
+                <li><a href="information.html">Информация</a></li>
+                <li><a href="contact.html" class="active">Контакты</a></li>
+            </ul>
+            <div class="language-switcher">
+                <a href="../contact.html" class="language-btn">中文</a>
+                <a href="../en/contact.html" class="language-btn">EN</a>
+                <a href="contact.html" class="language-btn active">RU</a>
+            </div>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-language-switcher">
+            <a href="../contact.html" class="language-btn">中文</a>
+            <a href="../en/contact.html" class="language-btn">EN</a>
+            <a href="contact.html" class="language-btn active">RU</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <h1>Контакты</h1>
+            <p>Мы всегда готовы помочь вам</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-info-block">
+                    <h2>Контактная информация</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="icon">
+                                <img src="../images/icons/location.png" alt="Адрес">
+                            </div>
+                            <h3>Адрес</h3>
+                            <p>район Сигу, город Ланьчжоу, провинция Ганьсу, Китай</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon">
+                                <img src="../images/icons/phone.png" alt="Телефон">
+                            </div>
+                            <h3>Телефон</h3>
+                            <p>+86-18919006708</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon">
+                                <img src="../images/icons/email.png" alt="Email">
+                            </div>
+                            <h3>Email</h3>
+                            <p>2041539565@qq.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Отправить сообщение</h2>
+                    <form id="contactForm" action="/submit-form" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Имя</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Компания</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Свяжитесь с нами</h3>
+                <p><i class="icon-location"></i>Адрес: район Сигу, город Ланьчжоу, провинция Ганьсу</p>
+                <p><i class="icon-phone"></i>Тел: +86-18919006708</p>
+                <p><i class="icon-email"></i>Email: 2041539565@qq.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 Gansu Qilin Intelligent Equipment Co., Ltd. Все права защищены</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html> 

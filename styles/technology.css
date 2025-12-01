@@ -1,0 +1,214 @@
+/* 技术实力页面样式 */
+.page-banner {
+    margin-top: 80px;
+    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/banner-technology.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.page-banner h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+/* 设备展示轮播图样式 */
+.equipment-showcase {
+    padding: 3rem 0;
+    background-color: var(--secondary-color);
+}
+
+.equipment-showcase h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+/* 新增轮播图容器样式 */
+.equipment-slider {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* 调整轮播卡片尺寸 */
+.equipment-card {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* 图片显示调整 */
+.equipment-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .equipment-card img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 992px) {
+    .equipment-card img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .equipment-card {
+        width: 95%;
+    }
+    .equipment-card img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .equipment-card img {
+        height: 200px;
+    }
+}
+
+.equipment-info {
+    padding: 1.5rem;
+}
+
+.equipment-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.equipment-info p {
+    color: var(--dark-gray);
+}
+
+/* 技术能力展示样式 */
+.tech-capability {
+    padding: 3rem 0;
+}
+
+.tech-capability h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.capability-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.capability-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.capability-card:hover {
+    transform: translateY(-10px);
+}
+
+.capability-card .icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+}
+
+.capability-card .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.capability-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.capability-list {
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.capability-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-gray);
+}
+
+.capability-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .capability-grid,
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .equipment-card img {
+        height: 220px;
+    }
+
+    .page-banner {
+        padding: 3rem 1rem;
+    }
+
+    .page-banner h1 {
+        font-size: 2rem;
+    }
+
+    /* 删除以下轮播相关样式 */
+    .equipment-slider,
+    .swiper-pagination,
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+    
+    /* 新增静态布局 */
+    .static-equipment-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    @media (max-width: 768px) {
+        .static-equipment-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+}

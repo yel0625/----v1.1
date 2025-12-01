@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 甘肃骐霖智能装备有限公司</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/contact.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <img src="images/logo.png" alt="骐霖智能装备logo">
+                <span class="logo-text">甘肃骐霖智能装备</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="products.html">产品介绍</a></li>
+                <li><a href="history.html">历史沿革</a></li>
+                <li><a href="technology.html">技术实力</a></li>
+                <li><a href="information.html">行业资料</a></li>
+                <li><a href="contact.html" class="active">联系我们</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <h1>联系我们</h1>
+            <p>随时恭候您的咨询</p>
+        </section>
+
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="icon">
+                            <img src="images/icons/location.png" alt="地址">
+                        </div>
+                        <h3>公司地址</h3>
+                        <p>甘肃省兰州市西固区柳坪半坡</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">
+                            <img src="images/icons/phone.png" alt="电话">
+                        </div>
+                        <h3>联系电话</h3>
+                        <p>销售热线：+86-18919006708</p>
+                        <p>服务热线：+86-15101257298</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">
+                            <img src="images/icons/email.png" alt="邮箱">
+                        </div>
+                        <h3>电子邮箱</h3>
+                        <p>2041539565@qq.com</p>
+                        <p>18919006708@163.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <h2>在线留言</h2>
+                <form class="contact-form" id="contactForm" action="api/submit-form.php" method="POST">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">公司名称</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">联系电话</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">电子邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">留言内容</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">提交留言</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>联系我们</h3>
+                <p><i class="icon-location"></i>地址：甘肃省兰州市西固区</p>
+                <p><i class="icon-phone"></i>电话：+86-18919006708</p>
+                <p><i class="icon-email"></i>邮箱：2041539565@qq.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 甘肃骐霖智能装备有限公司 版权所有</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

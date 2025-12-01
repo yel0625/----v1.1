@@ -1,0 +1,18 @@
+# 禁止目录列表
+Options -Indexes
+
+# IP白名单（示例IP请替换为实际IP）
+<RequireAny>
+    Require ip 192.168.1.100
+    Require ip 127.0.0.1
+</RequireAny>
+
+# 禁止直接访问PHP文件
+<FilesMatch "\.(php)$">
+    Deny from all
+</FilesMatch>
+
+# 允许登录页面
+<Files "login.php">
+    Allow from all
+</Files>
