@@ -472,7 +472,7 @@ footer {
 }
 
 .machining-btn-wrapper .cta-button {
-    disp
+   display: inline-block;
 }
 
 /* —— CNC 页面专用扩展样式 —— */
