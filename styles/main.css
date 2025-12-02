@@ -409,3 +409,22 @@ footer {
         background: white;
     }
 }
+/* 精密机加工模块按钮居中修复 */
+.machining-btn-wrapper {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.machining-btn-wrapper .cta-button {
+    display: inline-block;
+}
+
+/* 精密机加工模块整体排版微调（可选但推荐） */
+.machining-section h2,
+.machining-section .subtitle {
+    text-align: center;
+}
+
+.machining-grid {
+    margin-top: 20px;
+}
