@@ -428,3 +428,48 @@ footer {
 .machining-grid {
     margin-top: 20px;
 }
+/* 精密机加工模块网格布局优化 */
+.machining-section {
+    padding: 4rem 0;
+}
+
+.machining-section h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.machining-section .subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* 2×2 网格布局 */
+.machining-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 3rem; /* 行间距2rem，列间距3rem */
+    max-width: 800px;
+    margin: 0 auto; /* 居中网格 */
+}
+
+.machining-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    color: #1e4b94;
+    font-weight: bold;
+}
+
+.machining-item p {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* 按钮与网格保持较近距离 */
+.machining-btn-wrapper {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.machining-btn-wrapper .cta-button {
+    disp
