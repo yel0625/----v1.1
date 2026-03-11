@@ -27,20 +27,33 @@ body {
     padding: 0 20px;
 }
 
+/* 语言栏样式 */
+.language-switcher {
+    background-color: #f8f9fa;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.language-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
 /* 导航栏样式优化 */
 .main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
+    position: static;
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
 }
 
 .logo img {
@@ -67,7 +80,7 @@ body {
 
 /* 轮播图样式 */
 .hero-section {
-    margin-top: 80px;
+    margin-top: 0;
 }
 
 .swiper-container {
@@ -371,13 +384,13 @@ footer {
 }
 
 .language-btn {
-    padding: 5px 10px;
+    padding: 3px 8px;
     border: 1px solid var(--primary-color);
     border-radius: 4px;
     color: var(--primary-color);
     background: transparent;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     transition: all 0.3s ease;
 }
 
