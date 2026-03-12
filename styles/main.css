@@ -708,13 +708,15 @@ html {
 /* 导航链接悬停效果增强 */
 .nav-links li a {
     position: relative;
+    display: inline-block;
 }
 
 .nav-links li a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background: var(--primary-color);
@@ -722,7 +724,7 @@ html {
 }
 
 .nav-links li a:hover::after {
-    width: 100%;
+    width: 80%;
 }
 
 /* 按钮点击效果 */
