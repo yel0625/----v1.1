@@ -1,56 +1,65 @@
-// 初始化百度地图
 function initMap() {
-    const map = new BMap.Map("map");
-    const point = new BMap.Point(103.823557, 36.059102); // 兰州市坐标
+    const mapContainer = document.getElementById('map');
+
+    if (!mapContainer || typeof window.BMap === 'undefined') {
+        return;
+    }
+
+    const map = new BMap.Map('map');
+    const point = new BMap.Point(103.823557, 36.059102);
     map.centerAndZoom(point, 15);
     map.enableScrollWheelZoom();
 
-    // 添加标记
     const marker = new BMap.Marker(point);
     map.addOverlay(marker);
 
-    // 添加信息窗口
-    const infoWindow = new BMap.InfoWindow("甘肃骐霖智能装备有限公司", {
-        width: 200,
-        height: 60,
-        title: "公司地址"
+    const infoWindow = new BMap.InfoWindow('甘肃骐霖智能装备有限公司', {
+        width: 220,
+        height: 70,
+        title: '公司地址',
     });
-    marker.addEventListener("click", function() {
+
+    marker.addEventListener('click', () => {
         map.openInfoWindow(infoWindow, point);
     });
 }
 
-// 表单验证和提交
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // 前端验证
-    const phoneRegex = /^1[3-9]\d{9}$/;
-    if (!phoneRegex.test(this.phone.value)) {
-        alert('请输入有效的手机号码');
-        return;
-    }
-    
-    // 异步提交
-    fetch(this.action, {
-        method: this.method,
-        body: new FormData(this)
-    })
-    .then(response => {
-        if (response.ok) {
-            this.reset();
-            return response.text();
-        }
-        throw new Error('提交失败');
-    })
-    .then(data => {
-        console.log('提交成功:', data);
-    })
-    .catch(error => {
-        console.error('错误:', error);
-        alert('提交失败，请稍后重试');
-    });
-});
+const contactForm = document.getElementById('contactForm');
 
-// 页面加载完成后初始化地图
+if (contactForm) {
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const phoneValue = contactForm.phone?.value?.trim() || '';
+        const mobileRegex = /^1[3-9]\d{9}$/;
+        const telRegex = /^\+?[0-9\-()\s]{7,20}$/;
+
+        if (!mobileRegex.test(phoneValue) && !telRegex.test(phoneValue)) {
+            alert('请输入有效的联系电话');
+            return;
+        }
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: contactForm.method,
+                body: new FormData(contactForm),
+            });
+
+            const text = await response.text();
+
+            if (!response.ok) {
+                throw new Error(text || '提交失败');
+            }
+
+            contactForm.reset();
+            document.open();
+            document.write(text);
+            document.close();
+        } catch (error) {
+            console.error('提交失败', error);
+            alert('提交失败，请稍后重试');
+        }
+    });
+}
+
 window.addEventListener('load', initMap);

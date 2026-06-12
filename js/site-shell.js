@@ -44,14 +44,14 @@
 
     const navItems = {
         zh: [
-            { key: "home", label: "首页", path: "index.html" },
-            { key: "products", label: "产品介绍", path: "products.html" },
+            { key: "home", label: "首页", path: "index.php" },
+            { key: "products", label: "产品介绍", path: "products.php" },
             { key: "capsule-production", label: "胶囊生产线", path: "capsule-production.html" },
             { key: "cnc-machining", label: "精密机加工", path: "CNC-machining.html" },
             { key: "technology", label: "技术实力", path: "technology.html" },
             { key: "history", label: "历史沿革", path: "history.html" },
-            { key: "information", label: "行业资料", path: "information.html" },
-            { key: "contact", label: "联系我们", path: "contact.html" },
+            { key: "information", label: "行业资料", path: "information.php" },
+            { key: "contact", label: "联系我们", path: "contact.php" },
         ],
         en: [
             { key: "home", label: "Home", path: "en/index.html" },
@@ -74,11 +74,11 @@
     const pageConfig = {
         home: {
             navKey: "home",
-            translations: { zh: "index.html", en: "en/index.html", ru: "ru/index.html" },
+            translations: { zh: "index.php", en: "en/index.html", ru: "ru/index.html" },
         },
         products: {
             navKey: "products",
-            translations: { zh: "products.html", en: "en/products.html", ru: "ru/products.html" },
+            translations: { zh: "products.php", en: "en/products.html", ru: "ru/products.html" },
         },
         "capsule-production": {
             navKey: "capsule-production",
@@ -98,11 +98,11 @@
         },
         information: {
             navKey: "information",
-            translations: { zh: "information.html", en: "en/information.html", ru: "ru/information.html" },
+            translations: { zh: "information.php", en: "en/information.html", ru: "ru/information.html" },
         },
         contact: {
             navKey: "contact",
-            translations: { zh: "contact.html", en: "en/contact.html", ru: "ru/contact.html" },
+            translations: { zh: "contact.php", en: "en/contact.html", ru: "ru/contact.html" },
         },
         about: {
             navKey: "home",
@@ -126,7 +126,7 @@
         },
         cooperation: {
             navKey: "contact",
-            translations: { zh: "contact.html", en: "en/cooperation.html", ru: "ru/contact.html" },
+            translations: { zh: "contact.php", en: "en/cooperation.html", ru: "ru/contact.html" },
         },
     };
 
