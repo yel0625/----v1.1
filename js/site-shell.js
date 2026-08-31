@@ -23,6 +23,11 @@
             email: "邮箱：2041539565@qq.com",
             copyright: `© ${currentYear} 甘肃骐霖智能装备有限公司 版权所有`,
             logoAlt: "骐霖智能装备 logo",
+            tagline: "药用硬胶囊生产线、配套设备与精密机加工服务。",
+            quickTitle: "快速入口",
+            quote: "获取方案",
+            call: "电话咨询",
+            products: "查看产品",
         },
         en: {
             title: "Contact Us",
@@ -31,6 +36,11 @@
             email: "Email: 2041539565@qq.com",
             copyright: `© ${currentYear} Gansu Qilin Intelligent Equipment Co., Ltd. All Rights Reserved`,
             logoAlt: "Qilin Intelligent Equipment logo",
+            tagline: "Pharmaceutical capsule production lines, supporting equipment, and precision machining services.",
+            quickTitle: "Quick Links",
+            quote: "Request a Solution",
+            call: "Call Sales",
+            products: "View Products",
         },
         ru: {
             title: "Свяжитесь с нами",
@@ -39,6 +49,11 @@
             email: "Email: 2041539565@qq.com",
             copyright: `© ${currentYear} Gansu Qilin Intelligent Equipment Co., Ltd. Все права защищены`,
             logoAlt: "Логотип Qilin Intelligent Equipment",
+            tagline: "Линии для фармацевтических капсул, комплектующие и услуги точной мехобработки.",
+            quickTitle: "Быстрые ссылки",
+            quote: "Запросить решение",
+            call: "Позвонить",
+            products: "Продукция",
         },
     };
 
@@ -155,6 +170,11 @@
         })
         .join("");
 
+    const footerNavigation = navItems[lang]
+        .slice(0, 4)
+        .map(({ label, path }) => `<a href="${toHref(path)}">${label}</a>`)
+        .join("");
+
     const headerMarkup = `
 <header>
     <div class="language-switcher">
@@ -167,13 +187,14 @@
     <nav class="main-nav">
         <div class="container">
             <div class="nav-content">
-                <div class="logo">
+                <a class="logo" href="${toHref(pageConfig.home.translations[lang])}" aria-label="Home">
                     <img src="${toHref("images/logo.png")}" alt="${footerContent[lang].logoAlt}">
                     <span class="logo-text">${logoText[lang]}</span>
-                </div>
+                </a>
                 <ul class="nav-links">
                     ${navigation}
                 </ul>
+                <a class="nav-quote" href="${toHref(lang === "zh" ? "contact.php" : `${lang}/contact.html`)}">${footerContent[lang].quote}</a>
                 <div class="mobile-menu">
                     <span></span><span></span><span></span>
                 </div>
@@ -188,17 +209,30 @@
     const footerMarkup = `
 <footer>
     <div class="footer-content">
+        <div class="footer-brand">
+            <h3>${logoText[lang]}</h3>
+            <p>${footerContent[lang].tagline}</p>
+            <a href="${toHref(lang === "zh" ? "products.php" : `${lang}/products.html`)}">${footerContent[lang].products}</a>
+        </div>
         <div class="contact-info">
             <h3>${footerContent[lang].title}</h3>
             <p>${footerContent[lang].address}</p>
             <p>${footerContent[lang].phone}</p>
             <p>${footerContent[lang].email}</p>
         </div>
+        <div class="footer-links">
+            <h3>${footerContent[lang].quickTitle}</h3>
+            ${footerNavigation}
+        </div>
     </div>
     <div class="copyright">
         <p>${footerContent[lang].copyright}</p>
     </div>
-</footer>`.trim();
+</footer>
+<div class="mobile-contact-dock" aria-label="Quick contact">
+    <a href="tel:+8618919006708">${footerContent[lang].call}</a>
+    <a href="${toHref(lang === "zh" ? "contact.php" : `${lang}/contact.html`)}">${footerContent[lang].quote}</a>
+</div>`.trim();
 
     const headerTarget = document.querySelector("[data-site-header]");
     if (headerTarget) {

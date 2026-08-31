@@ -169,7 +169,7 @@ $statusMessage = $statusMessages[$status] ?? '';
         <div class="admin-grid">
             <section class="admin-card">
                 <h2><?php echo (int) ($formData['id'] ?? 0) > 0 ? '编辑文章' : '新增文章'; ?></h2>
-                <p class="admin-note">正文支持两种输入方式：直接写普通文本，系统会自动分段；如果你输入 HTML 标签，前台会按原样渲染。</p>
+                <p class="admin-note">正文支持普通文本及有限的安全排版标签（段落、标题、列表、粗体和斜体）；危险标签和属性会自动移除。</p>
 
                 <form class="admin-form" method="post">
                     <?php echo qilin_csrf_input(); ?>

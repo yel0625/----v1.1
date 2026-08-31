@@ -1,0 +1,50 @@
+.page-banner {
+    margin-top: 80px;
+    padding: 4rem 2rem;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(rgba(30, 75, 148, 0.82), rgba(30, 75, 148, 0.9)), url('../images/company/exterior.jpg') center/cover;
+}
+
+.cooperation-content {
+    padding: 4rem 0;
+}
+
+.map-section,
+.advantages-section,
+.partners-section {
+    margin-bottom: 4rem;
+}
+
+.china-map img,
+.partner-card img {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.region-list,
+.advantage-grid,
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.region-item,
+.advantage-item,
+.partner-card {
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .page-banner {
+        padding: 3rem 1rem;
+    }
+}

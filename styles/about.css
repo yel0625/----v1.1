@@ -1,7 +1,7 @@
 /* 关于我们页面样式 */
 .page-banner {
     margin-top: 80px;
-    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/banner-about.jpg');
+    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/company/factory.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -216,4 +216,4 @@ footer {
 
 .footer-content {
     padding: 3rem 0;
-} 
+}

@@ -50,7 +50,10 @@ $productCategories = qilin_config('products', []);
                                                 <li><?php echo e($feature); ?></li>
                                             <?php endforeach; ?>
                                         </ul>
-                                        <a href="contact.php" class="btn-detail">咨询详情</a>
+                                        <div class="product-card-actions">
+                                            <a href="product-detail.php?slug=<?php echo e($item['slug']); ?>" class="btn-detail">查看详情</a>
+                                            <a href="contact.php?product=<?php echo e($item['slug']); ?>" class="text-link">咨询方案</a>
+                                        </div>
                                     </div>
                                 </div>
                             <?php endforeach; ?>

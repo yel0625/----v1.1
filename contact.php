@@ -5,6 +5,8 @@ $layoutOptions = [
     'active' => 'contact',
 ];
 $contact = qilin_config('contact');
+$selectedProduct = trim((string) ($_GET['product'] ?? ''));
+$selectedProductData = $selectedProduct !== '' ? qilin_find_product($selectedProduct) : null;
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -64,29 +66,43 @@ $contact = qilin_config('contact');
         <section class="contact-form-section">
             <div class="container">
                 <h2>在线留言</h2>
+                <p class="form-intro">请填写项目需求，我们通常会尽快与您联系。公司名称为选填项。</p>
                 <form class="contact-form" id="contactForm" action="api/submit-form.php" method="POST">
+                    <input type="hidden" name="locale" value="zh">
+                    <div class="form-trap" aria-hidden="true"><label for="website">网站</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name">姓名</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="company">公司名称</label>
-                            <input type="text" id="company" name="company" required>
+                            <label for="company">公司名称 <span>（选填）</span></label>
+                            <input type="text" id="company" name="company">
                         </div>
                         <div class="form-group">
-                            <label for="phone">联系电话</label>
-                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">联系电话 <span>（与邮箱至少填写一项）</span></label>
+                            <input type="tel" id="phone" name="phone">
                         </div>
                         <div class="form-group">
-                            <label for="email">电子邮箱</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">电子邮箱 <span>（与电话至少填写一项）</span></label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="country">国家或地区 <span>（选填）</span></label>
+                            <input type="text" id="country" name="country">
+                        </div>
+                        <div class="form-group">
+                            <label for="target_capacity">目标产能 <span>（选填）</span></label>
+                            <input type="text" id="target_capacity" name="target_capacity" placeholder="例如：每日 150 万粒">
                         </div>
                     </div>
                     <div class="form-group full-width">
                         <label for="message">留言内容</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <textarea id="message" name="message" rows="6" required placeholder="请说明胶囊规格、设备需求、现场条件或加工要求"><?php echo $selectedProductData ? e('咨询产品：' . $selectedProductData['name'] . "\n") : ''; ?></textarea>
                     </div>
+                    <p class="privacy-note">提交即表示您同意我们仅将所填信息用于本次业务联系。请勿提交与项目无关的敏感个人信息。</p>
                     <button type="submit" class="submit-btn">提交留言</button>
                 </form>
             </div>

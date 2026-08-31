@@ -21,41 +21,69 @@ $homepage = qilin_config('homepage');
     <meta property="og:url" content="<?php echo e(qilin_config('site_url')); ?>/index.php">
     <link rel="canonical" href="<?php echo e(qilin_config('site_url')); ?>/index.php">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script type="application/ld+json"><?php echo json_encode([
+        '@context' => 'https://schema.org', '@type' => 'Organization',
+        'name' => qilin_config('site_name'), 'url' => qilin_config('site_url'),
+        'logo' => qilin_config('site_url') . '/images/logo.png',
+        'email' => qilin_config('contact.primary_email'), 'telephone' => qilin_config('contact.sales_phone'),
+        'address' => ['@type' => 'PostalAddress', 'streetAddress' => qilin_config('contact.address'), 'addressCountry' => 'CN'],
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
 </head>
 <body>
     <?php include __DIR__ . '/includes/header.php'; ?>
 
     <main>
-        <section class="hero-section">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <?php foreach ($homepage['hero_slides'] as $slide): ?>
-                        <div class="swiper-slide">
-                            <div class="slide-content">
-                                <div class="slide-image">
-                                    <img src="<?php echo e($slide['image']); ?>" alt="<?php echo e($slide['alt']); ?>">
-                                </div>
-                                <div class="slide-text">
-                                    <h1><?php echo e($slide['title']); ?></h1>
-                                    <p><?php echo e($slide['description']); ?></p>
-                                    <a href="<?php echo e($slide['primary_cta']['href']); ?>" class="cta-button"><?php echo e($slide['primary_cta']['label']); ?></a>
-                                    <a href="<?php echo e($slide['secondary_cta']['href']); ?>" class="cta-button" style="margin-left: 10px;"><?php echo e($slide['secondary_cta']['label']); ?></a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+        <section class="home-hero">
+            <div class="container home-hero-grid">
+                <div class="home-hero-copy">
+                    <span class="eyebrow">胶囊生产设备 · 精密制造</span>
+                    <h1>药用硬胶囊生产线与精密零部件制造商</h1>
+                    <p>提供胶囊成型、干燥、抛光、分选设备及完整生产线方案，同时承接 CNC 精密机加工项目。</p>
+                    <div class="hero-actions">
+                        <a href="contact.php" class="cta-button">获取生产线方案</a>
+                        <a href="products.php" class="button-secondary">查看设备参数</a>
+                    </div>
+                    <ul class="hero-proof" aria-label="服务能力">
+                        <li>方案沟通</li><li>设备制造</li><li>安装指导</li><li>售后与备件</li>
+                    </ul>
                 </div>
-
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <div class="home-hero-media">
+                    <img src="images/equipment-line.jpg" alt="硬胶囊自动化生产设备">
+                    <div class="hero-media-note"><strong>完整生产线方案</strong><span>根据产能、规格与现场条件进行配置沟通</span></div>
+                </div>
             </div>
         </section>
 
-        <section class="company-intro">
+        <section class="home-products section-pad">
             <div class="container">
-                <h2><?php echo e($homepage['company_intro']['title']); ?></h2>
+                <div class="section-heading">
+                    <span class="eyebrow">核心产品</span>
+                    <h2>从单机设备到完整生产线</h2>
+                    <p>围绕生产目标选择设备与配套组件，技术参数以项目确认方案为准。</p>
+                </div>
+                <div class="featured-product-grid">
+                    <?php foreach (qilin_config('products', []) as $category): ?>
+                        <?php foreach ($category['items'] as $item): ?>
+                            <article class="featured-product-card">
+                                <a class="featured-product-image" href="product-detail.php?slug=<?php echo e($item['slug']); ?>">
+                                    <img src="<?php echo e($item['image']); ?>" alt="<?php echo e($item['alt']); ?>" loading="lazy">
+                                </a>
+                                <div class="featured-product-body">
+                                    <span class="product-type"><?php echo e($category['title']); ?></span>
+                                    <h3><a href="product-detail.php?slug=<?php echo e($item['slug']); ?>"><?php echo e($item['name']); ?></a></h3>
+                                    <p><?php echo e($item['summary']); ?></p>
+                                    <a class="text-link" href="product-detail.php?slug=<?php echo e($item['slug']); ?>">查看详情 →</a>
+                                </div>
+                            </article>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+
+        <section class="company-intro section-pad">
+            <div class="container">
+                <div class="section-heading align-left"><span class="eyebrow">关于骐霖</span><h2><?php echo e($homepage['company_intro']['title']); ?></h2></div>
                 <div class="intro-content">
                     <div class="intro-text">
                         <?php foreach ($homepage['company_intro']['paragraphs'] as $paragraph): ?>
@@ -70,9 +98,9 @@ $homepage = qilin_config('homepage');
             </div>
         </section>
 
-        <section class="advantages">
+        <section class="advantages section-pad">
             <div class="container">
-                <h2>核心优势</h2>
+                <div class="section-heading"><span class="eyebrow">制造与服务</span><h2>围绕项目交付建立完整支持</h2><p>从方案沟通到设备调试及备件支持，为客户提供持续服务。</p></div>
                 <div class="advantage-grid">
                     <?php foreach ($homepage['advantages'] as $advantage): ?>
                         <div class="advantage-item">
@@ -85,7 +113,7 @@ $homepage = qilin_config('homepage');
             </div>
         </section>
 
-        <section class="machining-section">
+        <section class="machining-section section-pad">
             <div class="container">
                 <h2><?php echo e($homepage['machining']['title']); ?></h2>
                 <p class="subtitle"><?php echo e($homepage['machining']['subtitle']); ?></p>
@@ -102,11 +130,29 @@ $homepage = qilin_config('homepage');
                 </div>
             </div>
         </section>
+
+        <section class="service-process section-pad">
+            <div class="container">
+                <div class="section-heading"><span class="eyebrow">合作流程</span><h2>让设备项目的每一步更清楚</h2></div>
+                <ol class="process-grid">
+                    <li><span>01</span><h3>需求沟通</h3><p>确认产能、规格、现场条件及交付目标。</p></li>
+                    <li><span>02</span><h3>方案确认</h3><p>沟通设备配置、接口、周期及服务范围。</p></li>
+                    <li><span>03</span><h3>制造与调试</h3><p>按确认方案生产，并完成装配和运行检查。</p></li>
+                    <li><span>04</span><h3>交付与支持</h3><p>提供安装指导、培训、售后与备件支持。</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="home-inquiry">
+            <div class="container home-inquiry-inner">
+                <div><span class="eyebrow">开始沟通</span><h2>告诉我们您的产能与设备需求</h2><p>提交目标产能、胶囊规格或加工图纸信息，我们将结合项目情况与您联系。</p></div>
+                <a href="contact.php" class="cta-button cta-light">获取方案与报价</a>
+            </div>
+        </section>
     </main>
 
     <?php include __DIR__ . '/includes/footer.php'; ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

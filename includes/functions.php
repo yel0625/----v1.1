@@ -164,6 +164,19 @@ function qilin_ensure_storage_dir(): bool
 
 function qilin_prepare_article_content(string $content): string
 {
+    $content = trim($content);
+
+    if ($content === '') {
+        return '';
+    }
+
+    if (!str_contains($content, '<')) {
+        return $content;
+    }
+
+    $content = strip_tags($content, '<p><br><strong><em><ul><ol><li><h2><h3><blockquote>');
+    $content = preg_replace('/<(p|br|strong|em|ul|ol|li|h2|h3|blockquote)\b[^>]*>/i', '<$1>', $content) ?? '';
+
     return trim($content);
 }
 
@@ -176,7 +189,7 @@ function qilin_render_article_content(?string $content): string
     }
 
     if (str_contains($content, '<')) {
-        return $content;
+        return qilin_prepare_article_content($content);
     }
 
     $paragraphs = preg_split('/\R{2,}/u', $content) ?: [];
@@ -206,4 +219,18 @@ function qilin_next_article_id(array $articles): int
     }
 
     return $maxId + 1;
+}
+
+function qilin_find_product(string $slug): ?array
+{
+    foreach ((array) qilin_config('products', []) as $category) {
+        foreach ((array) ($category['items'] ?? []) as $item) {
+            if (($item['slug'] ?? '') === $slug) {
+                $item['category_title'] = (string) ($category['title'] ?? '产品');
+                return $item;
+            }
+        }
+    }
+
+    return null;
 }

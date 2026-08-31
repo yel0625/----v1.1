@@ -3,6 +3,12 @@ require_once __DIR__ . '/includes/bootstrap.php';
 
 $articleId = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 $article = $articleId > 0 ? qilin_fetch_article_by_id($articleId) : null;
+if (!$article) {
+    http_response_code(404);
+}
+$articleDescription = $article
+    ? trim((string) ($article['summary'] ?? ''))
+    : '未找到对应的行业资料文章，请返回资料列表继续浏览。';
 $layoutOptions = [
     'active' => 'information',
 ];
@@ -13,6 +19,8 @@ $layoutOptions = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo e($article['title'] ?? '文章详情'); ?> - <?php echo e(qilin_config('brand_name')); ?></title>
+    <meta name="description" content="<?php echo e($articleDescription); ?>">
+    <?php if (!$article): ?><meta name="robots" content="noindex,follow"><?php endif; ?>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/information.css">
 </head>

@@ -12,9 +12,14 @@ function qilin_db(): ?mysqli
 
     $host = getenv('QILIN_DB_HOST') ?: '127.0.0.1';
     $port = (int) (getenv('QILIN_DB_PORT') ?: 3306);
-    $user = getenv('QILIN_DB_USER') ?: 'db_user';
-    $password = getenv('QILIN_DB_PASSWORD') ?: 'db_password';
+    $user = trim((string) getenv('QILIN_DB_USER'));
+    $password = (string) getenv('QILIN_DB_PASSWORD');
     $database = getenv('QILIN_DB_NAME') ?: 'qilin_cms';
+
+    if ($user === '') {
+        $conn = null;
+        return null;
+    }
 
     $mysqli = @new mysqli($host, $user, $password, $database, $port);
 

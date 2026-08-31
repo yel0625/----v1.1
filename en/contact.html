@@ -60,29 +60,37 @@
         <section class="contact-form-section">
             <div class="container">
                 <h2>Send Us a Message</h2>
+                <p class="form-intro">Tell us about your project. Company name is optional, and either a phone number or email address is required.</p>
                 <form class="contact-form" id="contactForm" action="../api/submit-form.php" method="POST">
+                    <input type="hidden" name="locale" value="en">
+                    <div class="form-trap" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company" required>
+                            <label for="company">Company Name <span>(optional)</span></label>
+                            <input type="text" id="company" name="company">
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Phone <span>(phone or email required)</span></label>
+                            <input type="tel" id="phone" name="phone">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email <span>(phone or email required)</span></label>
+                            <input type="email" id="email" name="email">
                         </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group"><label for="country">Country or Region <span>(optional)</span></label><input type="text" id="country" name="country"></div>
+                        <div class="form-group"><label for="target_capacity">Target Output <span>(optional)</span></label><input type="text" id="target_capacity" name="target_capacity" placeholder="Example: 1.5 million capsules/day"></div>
                     </div>
                     <div class="form-group full-width">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <textarea id="message" name="message" rows="6" required placeholder="Capsule specification, equipment requirement, site conditions, or machining request"></textarea>
                     </div>
+                    <p class="privacy-note">We use the submitted information only to respond to this business inquiry. Please do not provide unrelated sensitive personal data.</p>
                     <button type="submit" class="submit-btn">Submit Message</button>
                 </form>
             </div>

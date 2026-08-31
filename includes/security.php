@@ -1,6 +1,12 @@
 <?php
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
+    ini_set('session.use_strict_mode', '1');
+    ini_set('session.cookie_httponly', '1');
+    ini_set('session.cookie_samesite', 'Lax');
+    if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+        ini_set('session.cookie_secure', '1');
+    }
     session_start();
 }
 
@@ -34,4 +40,19 @@ function qilin_require_admin(): void
         header('Location: login.php');
         exit;
     }
+}
+
+function qilin_admin_credentials_configured(): bool
+{
+    return trim((string) getenv('QILIN_ADMIN_PASSWORD_HASH')) !== '';
+}
+
+function qilin_verify_admin_credentials(string $username, string $password): bool
+{
+    $expectedUsername = trim((string) (getenv('QILIN_ADMIN_USERNAME') ?: 'admin'));
+    $passwordHash = trim((string) getenv('QILIN_ADMIN_PASSWORD_HASH'));
+
+    return $passwordHash !== ''
+        && hash_equals($expectedUsername, $username)
+        && password_verify($password, $passwordHash);
 }

@@ -1,7 +1,7 @@
 /* 历史沿革页面样式 */
 .page-banner {
     margin-top: 80px;
-    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/banner-history.jpg');
+    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/company/factory.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -162,4 +162,4 @@
     .year {
         font-size: 1.8rem;
     }
-} 
+}

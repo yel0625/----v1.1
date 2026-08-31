@@ -1,7 +1,7 @@
 /* 产品页面特定样式 */
 .page-banner {
     margin-top: 80px;
-    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/banner-products.jpg');
+    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/equipment-line.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -135,4 +135,15 @@
     .product-grid {
         grid-template-columns: 1fr;
     }
-} 
+}
+
+.product-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.product-card-actions .text-link { white-space: nowrap; }
+
+.product-specifications { background: #fff; }
+.spec-table-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 14px; }
+.spec-table { width: 100%; border-collapse: collapse; background: #fff; }
+.spec-table th, .spec-table td { padding: 1rem 1.2rem; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: top; }
+.spec-table tr:last-child th, .spec-table tr:last-child td { border-bottom: 0; }
+.spec-table th { width: 38%; color: var(--primary-dark); background: var(--secondary-color); }
+.spec-table td { color: var(--dark-gray); }

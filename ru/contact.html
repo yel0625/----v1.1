@@ -60,29 +60,37 @@
         <section class="contact-form-section">
             <div class="container">
                 <h2>Отправить сообщение</h2>
+                <p class="form-intro">Расскажите о проекте. Название компании необязательно; укажите телефон или электронную почту.</p>
                 <form class="contact-form" id="contactForm" action="../api/submit-form.php" method="POST">
+                    <input type="hidden" name="locale" value="ru">
+                    <div class="form-trap" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name">Имя</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="company">Компания</label>
-                            <input type="text" id="company" name="company" required>
+                            <label for="company">Компания <span>(необязательно)</span></label>
+                            <input type="text" id="company" name="company">
                         </div>
                         <div class="form-group">
-                            <label for="phone">Телефон</label>
-                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Телефон <span>(телефон или email обязателен)</span></label>
+                            <input type="tel" id="phone" name="phone">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email <span>(телефон или email обязателен)</span></label>
+                            <input type="email" id="email" name="email">
                         </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group"><label for="country">Страна или регион <span>(необязательно)</span></label><input type="text" id="country" name="country"></div>
+                        <div class="form-group"><label for="target_capacity">Требуемая производительность <span>(необязательно)</span></label><input type="text" id="target_capacity" name="target_capacity" placeholder="Например: 1,5 млн капсул/сутки"></div>
                     </div>
                     <div class="form-group full-width">
                         <label for="message">Сообщение</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <textarea id="message" name="message" rows="6" required placeholder="Спецификация капсул, оборудование, условия площадки или требования к обработке"></textarea>
                     </div>
+                    <p class="privacy-note">Мы используем отправленную информацию только для ответа на этот деловой запрос. Не указывайте посторонние конфиденциальные персональные данные.</p>
                     <button type="submit" class="submit-btn">Отправить сообщение</button>
                 </form>
             </div>

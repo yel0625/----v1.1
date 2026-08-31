@@ -1,7 +1,7 @@
 /* 联系我们页面样式 */
 .page-banner {
     margin-top: 80px;
-    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/banner-contact.jpg');
+    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/company/exterior.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -100,6 +100,18 @@
     box-shadow: 0 3px 15px rgba(0,0,0,0.1);
 }
 
+.form-intro { max-width: 800px; margin: -2rem auto 1.4rem; text-align: center; color: var(--dark-gray); }
+.form-group label span { color: var(--dark-gray); font-size: .85rem; font-weight: 400; }
+.privacy-note { color: var(--dark-gray); font-size: .82rem; line-height: 1.6; margin-bottom: 1rem; }
+
+.form-trap {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -172,4 +184,4 @@
     .page-banner h1 {
         font-size: 2rem;
     }
-} 
+}

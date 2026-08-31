@@ -1,7 +1,7 @@
 /* 技术实力页面样式 */
 .page-banner {
     margin-top: 80px;
-    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/banner-technology.jpg');
+    background: linear-gradient(rgba(30, 75, 148, 0.8), rgba(30, 75, 148, 0.9)), url('../images/equipment1.jpg');
     background-size: cover;
     background-position: center;
     color: white;
