@@ -61,8 +61,11 @@
         zh: [
             { key: "home", label: "首页", path: "index.php" },
             { key: "products", label: "产品介绍", path: "products.php" },
-            { key: "capsule-production", label: "胶囊生产线", path: "capsule-production.html" },
-            { key: "cnc-machining", label: "精密机加工", path: "CNC-machining.html" },
+            { key: "overseas", label: "海外建厂", path: "overseas-factory.php" },
+            { key: "technical", label: "技术实力", children: [
+                { key: "capsule-production", label: "胶囊生产线", path: "capsule-production.html" },
+                { key: "cnc-machining", label: "精密机加工", path: "CNC-machining.html" },
+            ] },
             { key: "history", label: "历史沿革", path: "history.html" },
             { key: "patents", label: "专利成果", path: "patents.php" },
             { key: "information", label: "行业资料", path: "information.php" },
@@ -71,6 +74,11 @@
         en: [
             { key: "home", label: "Home", path: "en/index.html" },
             { key: "products", label: "Products", path: "en/products.html" },
+            { key: "overseas", label: "Overseas Plants", path: "en/overseas-factory.html" },
+            { key: "technical", label: "Capabilities", children: [
+                { key: "capsule-production", label: "Capsule Production Lines", path: "en/capsule-production.html" },
+                { key: "cnc-machining", label: "Precision Machining", path: "en/CNC-machining.html" },
+            ] },
             { key: "history", label: "History", path: "en/history.html" },
             { key: "patents", label: "Patents", path: "en/patents.html" },
             { key: "information", label: "Information", path: "en/information.html" },
@@ -79,6 +87,11 @@
         ru: [
             { key: "home", label: "Главная", path: "ru/index.html" },
             { key: "products", label: "Продукция", path: "ru/products.html" },
+            { key: "overseas", label: "Заводы за рубежом", path: "ru/overseas-factory.html" },
+            { key: "technical", label: "Компетенции", children: [
+                { key: "capsule-production", label: "Линии для капсул", path: "ru/capsule-production.html" },
+                { key: "cnc-machining", label: "Точная обработка", path: "ru/CNC-machining.html" },
+            ] },
             { key: "history", label: "История", path: "ru/history.html" },
             { key: "patents", label: "Патенты", path: "ru/patents.html" },
             { key: "information", label: "Информация", path: "ru/information.html" },
@@ -97,15 +110,19 @@
         },
         "capsule-production": {
             navKey: "capsule-production",
-            translations: { zh: "capsule-production.html", en: "en/index.html", ru: "ru/index.html" },
+            translations: { zh: "capsule-production.html", en: "en/capsule-production.html", ru: "ru/capsule-production.html" },
         },
         "cnc-machining": {
             navKey: "cnc-machining",
-            translations: { zh: "CNC-machining.html", en: "en/index.html", ru: "ru/index.html" },
+            translations: { zh: "CNC-machining.html", en: "en/CNC-machining.html", ru: "ru/CNC-machining.html" },
         },
         history: {
             navKey: "history",
             translations: { zh: "history.html", en: "en/history.html", ru: "ru/history.html" },
+        },
+        overseas: {
+            navKey: "overseas",
+            translations: { zh: "overseas-factory.php", en: "en/overseas-factory.html", ru: "ru/overseas-factory.html" },
         },
         patents: {
             navKey: "patents",
@@ -164,13 +181,19 @@
         .join("");
 
     const navigation = navItems[lang]
-        .map(({ key, label, path }) => {
+        .map(({ key, label, path, children }) => {
+            if (children) {
+                const groupActive = children.some((child) => child.key === currentNavKey);
+                const submenu = children.map((child) => `<li><a href="${toHref(child.path)}"${child.key === currentNavKey ? ' class="active"' : ""}>${child.label}</a></li>`).join("");
+                return `<li class="nav-dropdown${groupActive ? " is-active" : ""}"><button class="nav-dropdown-toggle" type="button" aria-haspopup="true">${label}<span aria-hidden="true">⌄</span></button><ul class="nav-dropdown-menu">${submenu}</ul></li>`;
+            }
             const active = key === currentNavKey ? ' class="active"' : "";
             return `<li><a href="${toHref(path)}"${active}>${label}</a></li>`;
         })
         .join("");
 
     const footerNavigation = navItems[lang]
+        .flatMap((item) => item.children || [item])
         .slice(0, 4)
         .map(({ label, path }) => `<a href="${toHref(path)}">${label}</a>`)
         .join("");

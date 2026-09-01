@@ -46,6 +46,14 @@ if (contactForm) {
         const prefix = languageKey === 'ru' ? 'Интересующий продукт: ' : languageKey === 'en' ? 'Product inquiry: ' : '咨询产品：';
         contactForm.message.value = `${prefix}${requestedNames[requestedSlug][languageKey]}\n`;
     }
+    const requestedService = new URLSearchParams(window.location.search).get('service');
+    if (requestedService === 'overseas-factory' && contactForm.message && !contactForm.message.value.trim()) {
+        contactForm.message.value = languageKey === 'ru'
+            ? 'Запрос по строительству зарубежного завода:\nСтрана/город:\nПланируемая мощность:\nТип и размер капсул:\n'
+            : languageKey === 'en'
+                ? 'Overseas factory project inquiry:\nCountry/city:\nTarget capacity:\nCapsule type and sizes:\n'
+                : '海外建厂项目咨询：\n项目国家/城市：\n目标产能：\n胶囊类型及规格：\n';
+    }
     contactForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 

@@ -17,11 +17,16 @@ function qilin_render_header(array $options = []): void
                 </a>
                 <ul class="nav-links">
                     <?php foreach ($nav as $key => $item): ?>
-                        <li>
-                            <a href="<?php echo e(qilin_url($item['href'], $basePath)); ?>"<?php echo $active === $key ? ' class="active"' : ''; ?>>
-                                <?php echo e($item['label']); ?>
-                            </a>
-                        </li>
+                        <?php if (!empty($item['children'])): $groupActive = array_key_exists($active, $item['children']); ?>
+                            <li class="nav-dropdown<?php echo $groupActive ? ' is-active' : ''; ?>">
+                                <button class="nav-dropdown-toggle" type="button" aria-haspopup="true"><?php echo e($item['label']); ?><span aria-hidden="true">⌄</span></button>
+                                <ul class="nav-dropdown-menu">
+                                    <?php foreach ($item['children'] as $childKey => $child): ?><li><a href="<?php echo e(qilin_url($child['href'], $basePath)); ?>"<?php echo $active === $childKey ? ' class="active"' : ''; ?>><?php echo e($child['label']); ?></a></li><?php endforeach; ?>
+                                </ul>
+                            </li>
+                        <?php else: ?>
+                            <li><a href="<?php echo e(qilin_url($item['href'], $basePath)); ?>"<?php echo $active === $key ? ' class="active"' : ''; ?>><?php echo e($item['label']); ?></a></li>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </ul>
                 <div class="nav-language" aria-label="切换语言"><span class="active">中</span><a href="<?php echo e(qilin_url('en/index.html', $basePath)); ?>">EN</a><a href="<?php echo e(qilin_url('ru/index.html', $basePath)); ?>">RU</a></div>
@@ -58,6 +63,7 @@ function qilin_render_footer(array $options = []): void
             <h3>快速入口</h3>
             <a href="<?php echo e(qilin_url('about.html', $basePath)); ?>">公司介绍</a>
             <a href="<?php echo e(qilin_url('information.php', $basePath)); ?>">行业资料</a>
+            <a href="<?php echo e(qilin_url('overseas-factory.php', $basePath)); ?>">海外建厂</a>
             <a href="<?php echo e(qilin_url('patents.php', $basePath)); ?>">专利成果</a>
             <a href="<?php echo e(qilin_url('contact.php', $basePath)); ?>">提交询盘</a>
         </div>

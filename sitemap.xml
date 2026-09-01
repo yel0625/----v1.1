@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.gsqilin.cn/index.php</loc><lastmod>2026-08-31</lastmod><priority>1.0</priority></url>
   <url><loc>https://www.gsqilin.cn/products.php</loc><lastmod>2026-08-31</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.gsqilin.cn/overseas-factory.php</loc><lastmod>2026-09-01</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.gsqilin.cn/capsule-production.html</loc><lastmod>2026-08-31</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.gsqilin.cn/CNC-machining.html</loc><lastmod>2026-08-31</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/en/capsule-production.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/en/CNC-machining.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.gsqilin.cn/ru/capsule-production.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/ru/CNC-machining.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.gsqilin.cn/about.html</loc><lastmod>2026-08-31</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.gsqilin.cn/history.html</loc><lastmod>2026-08-31</lastmod><priority>0.6</priority></url>
   <url><loc>https://www.gsqilin.cn/patents.php</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
@@ -22,12 +27,14 @@
   <url><loc>https://www.gsqilin.cn/product-detail.php?slug=intelligent-control-system&amp;lang=zh</loc><lastmod>2026-08-31</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.gsqilin.cn/en/index.html</loc><lastmod>2026-08-31</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.gsqilin.cn/en/products.html</loc><lastmod>2026-08-31</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/en/overseas-factory.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.gsqilin.cn/en/patents.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.gsqilin.cn/en/about.html</loc><lastmod>2026-08-31</lastmod><priority>0.6</priority></url>
   <url><loc>https://www.gsqilin.cn/en/information.html</loc><lastmod>2026-08-31</lastmod><priority>0.6</priority></url>
   <url><loc>https://www.gsqilin.cn/en/contact.html</loc><lastmod>2026-08-31</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.gsqilin.cn/ru/index.html</loc><lastmod>2026-08-31</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.gsqilin.cn/ru/products.html</loc><lastmod>2026-08-31</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/ru/overseas-factory.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.gsqilin.cn/ru/patents.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.gsqilin.cn/ru/about.html</loc><lastmod>2026-08-31</lastmod><priority>0.6</priority></url>
   <url><loc>https://www.gsqilin.cn/ru/information.html</loc><lastmod>2026-08-31</lastmod><priority>0.6</priority></url>

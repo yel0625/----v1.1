@@ -14,8 +14,11 @@ return [
     'nav' => [
         'home' => ['label' => '首页', 'href' => 'index.php'],
         'products' => ['label' => '产品介绍', 'href' => 'products.php'],
-        'capsule-production' => ['label' => '胶囊生产线', 'href' => 'capsule-production.html'],
-        'cnc-machining' => ['label' => '精密机加工', 'href' => 'CNC-machining.html'],
+        'overseas' => ['label' => '海外建厂', 'href' => 'overseas-factory.php'],
+        'technical' => ['label' => '技术实力', 'children' => [
+            'capsule-production' => ['label' => '胶囊生产线', 'href' => 'capsule-production.html'],
+            'cnc-machining' => ['label' => '精密机加工', 'href' => 'CNC-machining.html'],
+        ]],
         'history' => ['label' => '历史沿革', 'href' => 'history.html'],
         'patents' => ['label' => '专利成果', 'href' => 'patents.php'],
         'information' => ['label' => '行业资料', 'href' => 'information.php'],

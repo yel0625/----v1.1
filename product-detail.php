@@ -2,7 +2,8 @@
 require_once __DIR__ . '/includes/bootstrap.php';
 
 $slug = trim((string) ($_GET['slug'] ?? ''));
-$lang = in_array(($_GET['lang'] ?? 'zh'), ['zh', 'en', 'ru'], true) ? $_GET['lang'] : 'zh';
+$requestedLang = (string) ($_GET['lang'] ?? 'zh');
+$lang = in_array($requestedLang, ['zh', 'en', 'ru'], true) ? $requestedLang : 'zh';
 $product = qilin_find_product($slug);
 if (!$product) {
     http_response_code(404);
