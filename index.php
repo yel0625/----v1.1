@@ -131,6 +131,18 @@ $homepage = qilin_config('homepage');
             </div>
         </section>
 
+        <section class="customer-visit section-pad">
+            <div class="container">
+                <div class="section-heading"><span class="eyebrow">国际客户来访</span><h2>巴基斯坦客户到访交流</h2><p>客户团队到访生产现场，围绕胶囊生产流程、设备配置、运行维护及项目合作进行现场交流。</p></div>
+                <div class="visit-gallery">
+                    <figure class="visit-card visit-card-wide"><img src="images/customer-visits/pakistan/meeting.webp" alt="巴基斯坦客户与甘肃骐霖团队进行项目会议" loading="lazy"><figcaption>项目需求与合作方案交流</figcaption></figure>
+                    <figure class="visit-card"><img src="images/customer-visits/pakistan/production-area.webp" alt="巴基斯坦客户参观胶囊生产区域" loading="lazy"><figcaption>参观胶囊生产区域</figcaption></figure>
+                    <figure class="visit-card"><img src="images/customer-visits/pakistan/line-discussion.webp" alt="工程师向巴基斯坦客户讲解胶囊生产线" loading="lazy"><figcaption>生产线结构与工艺讲解</figcaption></figure>
+                    <figure class="visit-card"><img src="images/customer-visits/pakistan/group-photo.webp" alt="巴基斯坦客户与甘肃骐霖团队合影" loading="lazy"><figcaption>客户团队与项目人员合影</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
         <section class="service-process section-pad">
             <div class="container">
                 <div class="section-heading"><span class="eyebrow">合作流程</span><h2>让设备项目的每一步更清楚</h2></div>

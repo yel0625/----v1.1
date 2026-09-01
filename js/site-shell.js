@@ -63,8 +63,8 @@
             { key: "products", label: "产品介绍", path: "products.php" },
             { key: "capsule-production", label: "胶囊生产线", path: "capsule-production.html" },
             { key: "cnc-machining", label: "精密机加工", path: "CNC-machining.html" },
-            { key: "technology", label: "技术实力", path: "technology.html" },
             { key: "history", label: "历史沿革", path: "history.html" },
+            { key: "patents", label: "专利成果", path: "patents.php" },
             { key: "information", label: "行业资料", path: "information.php" },
             { key: "contact", label: "联系我们", path: "contact.php" },
         ],
@@ -72,7 +72,7 @@
             { key: "home", label: "Home", path: "en/index.html" },
             { key: "products", label: "Products", path: "en/products.html" },
             { key: "history", label: "History", path: "en/history.html" },
-            { key: "technology", label: "Technology", path: "en/technology.html" },
+            { key: "patents", label: "Patents", path: "en/patents.html" },
             { key: "information", label: "Information", path: "en/information.html" },
             { key: "contact", label: "Contact", path: "en/contact.html" },
         ],
@@ -80,7 +80,7 @@
             { key: "home", label: "Главная", path: "ru/index.html" },
             { key: "products", label: "Продукция", path: "ru/products.html" },
             { key: "history", label: "История", path: "ru/history.html" },
-            { key: "technology", label: "Технологии", path: "ru/technology.html" },
+            { key: "patents", label: "Патенты", path: "ru/patents.html" },
             { key: "information", label: "Информация", path: "ru/information.html" },
             { key: "contact", label: "Контакты", path: "ru/contact.html" },
         ],
@@ -103,13 +103,13 @@
             navKey: "cnc-machining",
             translations: { zh: "CNC-machining.html", en: "en/index.html", ru: "ru/index.html" },
         },
-        technology: {
-            navKey: "technology",
-            translations: { zh: "technology.html", en: "en/technology.html", ru: "ru/technology.html" },
-        },
         history: {
             navKey: "history",
             translations: { zh: "history.html", en: "en/history.html", ru: "ru/history.html" },
+        },
+        patents: {
+            navKey: "patents",
+            translations: { zh: "patents.php", en: "en/patents.html", ru: "ru/patents.html" },
         },
         information: {
             navKey: "information",
@@ -177,13 +177,6 @@
 
     const headerMarkup = `
 <header>
-    <div class="language-switcher">
-        <div class="container">
-            <div class="language-links">
-                ${languageButtons}
-            </div>
-        </div>
-    </div>
     <nav class="main-nav">
         <div class="container">
             <div class="nav-content">
@@ -194,6 +187,7 @@
                 <ul class="nav-links">
                     ${navigation}
                 </ul>
+                <div class="nav-language" aria-label="Language">${languageButtons}</div>
                 <a class="nav-quote" href="${toHref(lang === "zh" ? "contact.php" : `${lang}/contact.html`)}">${footerContent[lang].quote}</a>
                 <div class="mobile-menu">
                     <span></span><span></span><span></span>
@@ -201,9 +195,6 @@
             </div>
         </div>
     </nav>
-    <div class="mobile-language-switcher">
-        ${languageButtons}
-    </div>
 </header>`.trim();
 
     const footerMarkup = `

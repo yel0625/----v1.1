@@ -35,8 +35,9 @@ if (contactForm) {
             : { contact: '请至少填写联系电话或电子邮箱', phone: '请输入有效的联系电话', failed: '提交失败，请稍后重试' };
     const requestedSlug = new URLSearchParams(window.location.search).get('product');
     const requestedNames = {
-        'ps-dnj34': { zh: 'PS-DNJ34全自动胶囊生产线', en: 'PS-DNJ34 Automatic Capsule Production Line', ru: 'Автоматическая линия PS-DNJ34' },
-        'ps-dnj35sn3': { zh: 'PS-DNJ35SN3全自动胶囊生产线', en: 'PS-DNJ35SN3 Automatic Capsule Production Line', ru: 'Автоматическая линия PS-DNJ35SN3' },
+        'ql-alhcs-v2': { zh: 'QL-ALHCS-V2单模针全自动胶囊生产线', en: 'QL-ALHCS-V2 Automatic Capsule Line', ru: 'Автоматическая линия QL-ALHCS-V2' },
+        'ql-alhcs-v4': { zh: 'QL-ALHCS-V4双机头全自动胶囊生产线', en: 'QL-ALHCS-V4 Double-Head Capsule Line', ru: 'Двухголовочная линия QL-ALHCS-V4' },
+        'ql-sahcm-v2': { zh: 'QL-SAHCM-V2半自动胶囊生产线', en: 'QL-SAHCM-V2 Semi-Automatic Capsule Line', ru: 'Полуавтоматическая линия QL-SAHCM-V2' },
         'capsule-mould-components': { zh: '模具组件', en: 'Capsule Mould Components', ru: 'Формовочные компоненты' },
         'intelligent-control-system': { zh: '智能控制系统', en: 'Intelligent Control System', ru: 'Интеллектуальная система управления' },
     };

@@ -8,15 +8,6 @@ function qilin_render_header(array $options = []): void
     $nav = qilin_config('nav');
     ?>
 <header>
-    <div class="language-switcher">
-        <div class="container">
-            <div class="language-links">
-                <span class="language-btn active">中文</span>
-                <a class="language-btn" href="<?php echo e(qilin_url('en/index.html', $basePath)); ?>">EN</a>
-                <a class="language-btn" href="<?php echo e(qilin_url('ru/index.html', $basePath)); ?>">RU</a>
-            </div>
-        </div>
-    </div>
     <nav class="main-nav">
         <div class="container">
             <div class="nav-content">
@@ -33,6 +24,7 @@ function qilin_render_header(array $options = []): void
                         </li>
                     <?php endforeach; ?>
                 </ul>
+                <div class="nav-language" aria-label="切换语言"><span class="active">中</span><a href="<?php echo e(qilin_url('en/index.html', $basePath)); ?>">EN</a><a href="<?php echo e(qilin_url('ru/index.html', $basePath)); ?>">RU</a></div>
                 <a class="nav-quote" href="<?php echo e(qilin_url('contact.php', $basePath)); ?>">获取方案</a>
                 <div class="mobile-menu">
                     <span></span><span></span><span></span>
@@ -40,11 +32,6 @@ function qilin_render_header(array $options = []): void
             </div>
         </div>
     </nav>
-    <div class="mobile-language-switcher">
-        <span class="language-btn active">中文</span>
-        <a class="language-btn" href="<?php echo e(qilin_url('en/index.html', $basePath)); ?>">EN</a>
-        <a class="language-btn" href="<?php echo e(qilin_url('ru/index.html', $basePath)); ?>">RU</a>
-    </div>
 </header>
     <?php
 }
@@ -70,8 +57,8 @@ function qilin_render_footer(array $options = []): void
         <div class="footer-links">
             <h3>快速入口</h3>
             <a href="<?php echo e(qilin_url('about.html', $basePath)); ?>">公司介绍</a>
-            <a href="<?php echo e(qilin_url('technology.html', $basePath)); ?>">技术实力</a>
             <a href="<?php echo e(qilin_url('information.php', $basePath)); ?>">行业资料</a>
+            <a href="<?php echo e(qilin_url('patents.php', $basePath)); ?>">专利成果</a>
             <a href="<?php echo e(qilin_url('contact.php', $basePath)); ?>">提交询盘</a>
         </div>
     </div>
