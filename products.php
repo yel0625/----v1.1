@@ -13,14 +13,29 @@ $productCategories = qilin_config('products', []);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>产品介绍 - <?php echo e(qilin_config('site_name')); ?> | 药用硬胶囊生产线与精密机加工设备</title>
     <meta name="description" content="查看甘肃骐霖智能装备有限公司的药用硬胶囊生产线、配套零部件和精密机加工能力。">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
     <meta property="og:title" content="产品介绍 - <?php echo e(qilin_config('site_name')); ?>">
     <meta property="og:description" content="专业研发生产药用硬胶囊生产线、配套零部件及精密机加工设备。">
     <meta property="og:image" content="<?php echo e(qilin_config('site_url')); ?>/images/product1.jpg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo e(qilin_config('site_url')); ?>/products.php">
     <link rel="canonical" href="<?php echo e(qilin_config('site_url')); ?>/products.php">
+    <link rel="alternate" hreflang="zh-CN" href="<?php echo e(qilin_config('site_url')); ?>/products.php">
+    <link rel="alternate" hreflang="en" href="<?php echo e(qilin_config('site_url')); ?>/en/products.html">
+    <link rel="alternate" hreflang="ru" href="<?php echo e(qilin_config('site_url')); ?>/ru/products.html">
+    <link rel="alternate" hreflang="x-default" href="<?php echo e(qilin_config('site_url')); ?>/en/products.html">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/products.css">
+    <script type="application/ld+json"><?php
+        $position = 0;
+        $productList = [];
+        foreach ($productCategories as $category) {
+            foreach ($category['items'] as $item) {
+                $productList[] = ['@type' => 'ListItem', 'position' => ++$position, 'url' => qilin_config('site_url') . '/product-detail.php?slug=' . rawurlencode($item['slug']) . '&lang=zh', 'name' => $item['name']];
+            }
+        }
+        echo json_encode(['@context' => 'https://schema.org', '@type' => 'CollectionPage', 'name' => '药用硬胶囊生产设备产品目录', 'url' => qilin_config('site_url') . '/products.php', 'mainEntity' => ['@type' => 'ItemList', 'numberOfItems' => count($productList), 'itemListElement' => $productList]], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    ?></script>
 </head>
 <body>
     <?php include __DIR__ . '/includes/header.php'; ?>

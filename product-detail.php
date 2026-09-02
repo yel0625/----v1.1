@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
 
+// Product details change frequently during catalogue updates. Prevent stale
+// markup or styles from leaving action labels invisible in long-lived tabs.
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+
 $slug = trim((string) ($_GET['slug'] ?? ''));
 $requestedLang = (string) ($_GET['lang'] ?? 'zh');
 $lang = in_array($requestedLang, ['zh', 'en', 'ru'], true) ? $requestedLang : 'zh';
@@ -76,8 +81,33 @@ $serviceCopy = [
     'en' => ['label' => 'From Requirement to Production', 'items' => [['Configuration', 'Confirm output, size and site conditions'], ['Manufacturing', 'Build against the agreed technical proposal'], ['Testing', 'Check key processes and continuous operation'], ['Installation & Training', 'Provide agreed delivery support']]],
     'ru' => ['label' => 'От требований до производства', 'items' => [['Конфигурация', 'Уточнение объема, размеров и площадки'], ['Изготовление', 'Производство по согласованному проекту'], ['Испытания', 'Проверка процессов и непрерывной работы'], ['Монтаж и обучение', 'Согласованная поддержка при поставке']]],
 ][$lang];
+$relatedCopy = [
+    'zh' => ['eyebrow' => '相关设备', 'title' => '继续比较其他设备与配置', 'link' => '查看设备详情'],
+    'en' => ['eyebrow' => 'Related Equipment', 'title' => 'Compare Other Equipment and Configurations', 'link' => 'View Equipment Details'],
+    'ru' => ['eyebrow' => 'Связанное оборудование', 'title' => 'Сравните другие модели и конфигурации', 'link' => 'Подробнее'],
+][$lang];
+$relatedProducts = [];
+foreach (qilin_config('products', []) as $category) {
+    foreach ($category['items'] as $candidate) {
+        if ($candidate['slug'] === $slug) {
+            continue;
+        }
+        if ($lang !== 'zh' && isset($translations[$lang][$candidate['slug']])) {
+            $candidate = array_merge($candidate, $translations[$lang][$candidate['slug']]);
+        }
+        $relatedProducts[] = $candidate;
+    }
+}
+$relatedProducts = array_slice($relatedProducts, 0, 3);
 $heroParameters = array_slice((array) ($product['parameters'] ?? []), 0, 3, true);
 $pageTitle = $product ? $product['name'] : $ui['notFound'];
+$siteUrl = rtrim((string) qilin_config('site_url'), '/');
+$canonicalUrl = $siteUrl . '/product-detail.php?slug=' . rawurlencode($slug) . '&lang=' . rawurlencode($lang);
+$languageUrls = [];
+foreach (['zh', 'en', 'ru'] as $languageCode) {
+    $languageUrls[$languageCode] = $siteUrl . '/product-detail.php?slug=' . rawurlencode($slug) . '&lang=' . $languageCode;
+}
+$metaDescription = $product ? $product['summary'] . '. ' . $ui['capTitle'] : $ui['notFoundBody'];
 $layoutOptions = ['active' => 'products'];
 ?>
 <!DOCTYPE html>
@@ -85,18 +115,26 @@ $layoutOptions = ['active' => 'products'];
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo e($pageTitle); ?> - Gansu Qilin Intelligent Equipment</title>
-    <meta name="description" content="<?php echo e($product ? $product['summary'] . '. ' . $ui['capTitle'] : $ui['notFoundBody']); ?>">
+    <meta name="description" content="<?php echo e($metaDescription); ?>">
+    <meta name="robots" content="<?php echo $product ? 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' : 'noindex,follow'; ?>">
     <meta property="og:type" content="product"><meta property="og:title" content="<?php echo e($pageTitle); ?>">
+    <meta property="og:description" content="<?php echo e($metaDescription); ?>"><meta property="og:url" content="<?php echo e($canonicalUrl); ?>">
+    <meta property="og:site_name" content="Gansu Qilin Intelligent Equipment"><meta property="og:locale" content="<?php echo e($lang === 'zh' ? 'zh_CN' : ($lang === 'ru' ? 'ru_RU' : 'en_US')); ?>">
     <?php if ($product): ?><meta property="og:image" content="<?php echo e(qilin_config('site_url')); ?>/<?php echo e($product['image']); ?>"><?php endif; ?>
-    <link rel="canonical" href="<?php echo e(qilin_config('site_url')); ?>/product-detail.php?slug=<?php echo e($slug); ?>&amp;lang=<?php echo e($lang); ?>">
-    <link rel="stylesheet" href="styles/main.css?v=20260901-3"><link rel="stylesheet" href="styles/products.css?v=20260901-3">
+    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="<?php echo e($pageTitle); ?>"><meta name="twitter:description" content="<?php echo e($metaDescription); ?>">
+    <link rel="canonical" href="<?php echo e($canonicalUrl); ?>">
+    <?php if ($product): ?><link rel="alternate" hreflang="zh-CN" href="<?php echo e($languageUrls['zh']); ?>"><link rel="alternate" hreflang="en" href="<?php echo e($languageUrls['en']); ?>"><link rel="alternate" hreflang="ru" href="<?php echo e($languageUrls['ru']); ?>"><link rel="alternate" hreflang="x-default" href="<?php echo e($languageUrls['en']); ?>"><?php endif; ?>
+    <?php if ($product): ?><link rel="preload" as="image" href="<?php echo e($product['image']); ?>" fetchpriority="high"><?php endif; ?>
+    <link rel="stylesheet" href="styles/main.css?v=20260902-1"><link rel="stylesheet" href="styles/products.css?v=20260902-1">
     <?php if ($product): ?>
     <script type="application/ld+json"><?php echo json_encode([
         '@context' => 'https://schema.org', '@type' => 'Product', 'name' => $product['name'],
+        'sku' => strtoupper($slug), 'category' => $product['category_title'],
         'image' => qilin_config('site_url') . '/' . $product['image'], 'description' => $product['summary'],
         'brand' => ['@type' => 'Brand', 'name' => 'Gansu Qilin Intelligent Equipment'],
         'manufacturer' => ['@type' => 'Organization', 'name' => qilin_config('site_name'), 'url' => qilin_config('site_url')],
-        'url' => qilin_config('site_url') . '/product-detail.php?slug=' . rawurlencode($slug) . '&lang=' . rawurlencode($lang),
+        'url' => $canonicalUrl,
+        'additionalProperty' => array_map(static fn ($label, $value) => ['@type' => 'PropertyValue', 'name' => (string) $label, 'value' => (string) $value], array_keys((array) ($product['parameters'] ?? [])), array_values((array) ($product['parameters'] ?? []))),
     ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
     <script type="application/ld+json"><?php echo json_encode([
         '@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => [
@@ -120,6 +158,7 @@ $layoutOptions = ['active' => 'products'];
         <section class="product-process section-pad"><div class="container narrow-container"><div class="section-heading"><h2><?php echo e($ui['processTitle']); ?></h2></div><ol class="process-flow"><?php foreach ($product['process'] as $index => $step): ?><li><span><?php echo str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT); ?></span><strong><?php echo e($step); ?></strong></li><?php endforeach; ?></ol></div></section>
         <section class="product-systems section-pad"><div class="container narrow-container"><div class="section-heading"><h2><?php echo e($ui['systemsTitle']); ?></h2></div><div class="system-grid"><?php foreach ($product['systems'] as $system): ?><article><span aria-hidden="true">✓</span><p><?php echo e($system); ?></p></article><?php endforeach; ?></div></div></section>
         <section class="product-capability section-pad"><div class="container narrow-container"><div class="section-heading"><span class="eyebrow"><?php echo e($ui['capEyebrow']); ?></span><h2><?php echo e($ui['capTitle']); ?></h2></div><div class="capability-list-grid"><?php foreach ($product['capabilities'] as $index => $capability): ?><article><span>0<?php echo $index + 1; ?></span><p><?php echo e($capability); ?></p></article><?php endforeach; ?></div></div></section>
+        <?php if ($relatedProducts): ?><section class="related-products section-pad"><div class="container"><div class="section-heading"><span class="eyebrow"><?php echo e($relatedCopy['eyebrow']); ?></span><h2><?php echo e($relatedCopy['title']); ?></h2></div><div class="related-product-grid"><?php foreach ($relatedProducts as $related): ?><article><a class="related-product-image" href="product-detail.php?slug=<?php echo e($related['slug']); ?>&amp;lang=<?php echo e($lang); ?>"><img src="<?php echo e($related['image']); ?>" alt="<?php echo e($related['name']); ?>" loading="lazy" decoding="async"></a><div><span><?php echo e($related['category_title'] ?? $relatedCopy['eyebrow']); ?></span><h3><a href="product-detail.php?slug=<?php echo e($related['slug']); ?>&amp;lang=<?php echo e($lang); ?>"><?php echo e($related['name']); ?></a></h3><p><?php echo e($related['summary']); ?></p><a class="text-link" href="product-detail.php?slug=<?php echo e($related['slug']); ?>&amp;lang=<?php echo e($lang); ?>"><?php echo e($relatedCopy['link']); ?> →</a></div></article><?php endforeach; ?></div></div></section><?php endif; ?>
         <section class="product-faq section-pad"><div class="container narrow-container"><div class="section-heading"><h2><?php echo e($ui['faqTitle']); ?></h2></div><div class="faq-list"><?php foreach ($product['faq'] as $item): ?><details><summary><?php echo e($item['q']); ?></summary><p><?php echo e($item['a']); ?></p></details><?php endforeach; ?></div></div></section>
         <section class="product-next-step"><div class="container home-inquiry-inner"><div><span class="eyebrow"><?php echo e($ui['next']); ?></span><h2><?php echo e($ui['nextTitle']); ?></h2><p><?php echo e($ui['nextBody']); ?></p></div><a class="cta-button cta-light" href="<?php echo e($ui['contact']); ?>?product=<?php echo e($slug); ?>"><?php echo e($ui['submit']); ?></a></div></section>
     <?php endif; ?>

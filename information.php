@@ -9,6 +9,7 @@ $filters = [
 ];
 $articles = qilin_fetch_articles($filters);
 $categories = qilin_config('article_categories');
+$hasFilters = $selectedCategory !== '' || $search !== '';
 $layoutOptions = [
     'active' => 'information',
 ];
@@ -20,6 +21,12 @@ $layoutOptions = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>行业资料 - <?php echo e(qilin_config('brand_name')); ?></title>
     <meta name="description" content="查看甘肃骐霖智能装备有限公司整理的技术文章、行业动态与政策法规资料。">
+    <meta name="robots" content="<?php echo $hasFilters ? 'noindex,follow' : 'index,follow,max-snippet:-1'; ?>">
+    <link rel="canonical" href="<?php echo e(qilin_config('site_url')); ?>/information.php">
+    <link rel="alternate" hreflang="zh-CN" href="<?php echo e(qilin_config('site_url')); ?>/information.php">
+    <link rel="alternate" hreflang="en" href="<?php echo e(qilin_config('site_url')); ?>/en/information.html">
+    <link rel="alternate" hreflang="ru" href="<?php echo e(qilin_config('site_url')); ?>/ru/information.html">
+    <link rel="alternate" hreflang="x-default" href="<?php echo e(qilin_config('site_url')); ?>/en/information.html">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/information.css">
 </head>

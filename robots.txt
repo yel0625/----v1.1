@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /thanks.php
 
-Sitemap: https://gsqilin.cn/sitemap.xml
+Sitemap: https://www.gsqilin.cn/sitemap.xml
+Sitemap: https://www.gsqilin.cn/image-sitemap.xml

@@ -13,6 +13,7 @@ $homepage = qilin_config('homepage');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo e(qilin_config('site_name')); ?> - 药用硬胶囊生产线与精密CNC机加工设备制造商</title>
     <meta name="description" content="甘肃骐霖智能装备有限公司专业研发生产药用硬胶囊生产线、胶囊抛光机、干燥设备及自动分选设备，同时提供CNC精密机加工服务。20年行业经验，设备出口全球30多个国家。">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <meta name="keywords" content="甘肃骐霖智能装备, 胶囊生产线, 空心胶囊设备, 硬胶囊生产机, 胶囊抛光机, 胶囊分选机, 工业制药设备, 制药机械, CNC精密机加工">
     <meta property="og:title" content="<?php echo e(qilin_config('site_name')); ?>">
     <meta property="og:description" content="专业研发生产药用硬胶囊生产线、配套设备及CNC精密机加工服务。">
@@ -20,6 +21,11 @@ $homepage = qilin_config('homepage');
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo e(qilin_config('site_url')); ?>/index.php">
     <link rel="canonical" href="<?php echo e(qilin_config('site_url')); ?>/index.php">
+    <link rel="alternate" hreflang="zh-CN" href="<?php echo e(qilin_config('site_url')); ?>/index.php">
+    <link rel="alternate" hreflang="en" href="<?php echo e(qilin_config('site_url')); ?>/en/index.html">
+    <link rel="alternate" hreflang="ru" href="<?php echo e(qilin_config('site_url')); ?>/ru/index.html">
+    <link rel="alternate" hreflang="x-default" href="<?php echo e(qilin_config('site_url')); ?>/en/index.html">
+    <link rel="preload" as="image" href="images/equipment-line.jpg" fetchpriority="high">
     <link rel="stylesheet" href="styles/main.css">
     <script type="application/ld+json"><?php echo json_encode([
         '@context' => 'https://schema.org', '@type' => 'Organization',
@@ -27,6 +33,14 @@ $homepage = qilin_config('homepage');
         'logo' => qilin_config('site_url') . '/images/logo.png',
         'email' => qilin_config('contact.primary_email'), 'telephone' => qilin_config('contact.sales_phone'),
         'address' => ['@type' => 'PostalAddress', 'streetAddress' => qilin_config('contact.address'), 'addressCountry' => 'CN'],
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
+    <script type="application/ld+json"><?php echo json_encode([
+        '@context' => 'https://schema.org', '@type' => 'WebSite',
+        'name' => 'Gansu Qilin Intelligent Equipment',
+        'alternateName' => qilin_config('site_name'),
+        'url' => qilin_config('site_url') . '/',
+        'inLanguage' => ['zh-CN', 'en', 'ru'],
+        'publisher' => ['@type' => 'Organization', 'name' => qilin_config('site_name'), 'url' => qilin_config('site_url')],
     ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
 </head>
 <body>
@@ -48,7 +62,7 @@ $homepage = qilin_config('homepage');
                     </ul>
                 </div>
                 <div class="home-hero-media">
-                    <img src="images/equipment-line.jpg" alt="硬胶囊自动化生产设备">
+                    <img src="images/equipment-line.jpg" alt="甘肃骐霖硬质空心胶囊自动化生产线设备" width="1000" height="666" fetchpriority="high" decoding="async">
                     <div class="hero-media-note"><strong>完整生产线方案</strong><span>根据产能、规格与现场条件进行配置沟通</span></div>
                 </div>
             </div>
@@ -135,10 +149,10 @@ $homepage = qilin_config('homepage');
             <div class="container">
                 <div class="section-heading"><span class="eyebrow">国际客户来访</span><h2>巴基斯坦客户到访交流</h2><p>客户团队到访生产现场，围绕胶囊生产流程、设备配置、运行维护及项目合作进行现场交流。</p></div>
                 <div class="visit-gallery">
-                    <figure class="visit-card visit-card-wide"><img src="images/customer-visits/pakistan/meeting.webp" alt="巴基斯坦客户与甘肃骐霖团队进行项目会议" loading="lazy"><figcaption>项目需求与合作方案交流</figcaption></figure>
-                    <figure class="visit-card"><img src="images/customer-visits/pakistan/production-area.webp" alt="巴基斯坦客户参观胶囊生产区域" loading="lazy"><figcaption>参观胶囊生产区域</figcaption></figure>
-                    <figure class="visit-card"><img src="images/customer-visits/pakistan/line-discussion.webp" alt="工程师向巴基斯坦客户讲解胶囊生产线" loading="lazy"><figcaption>生产线结构与工艺讲解</figcaption></figure>
-                    <figure class="visit-card"><img src="images/customer-visits/pakistan/group-photo.webp" alt="巴基斯坦客户与甘肃骐霖团队合影" loading="lazy"><figcaption>客户团队与项目人员合影</figcaption></figure>
+                    <figure class="visit-card visit-card-wide"><img src="images/customer-visits/pakistan/meeting.webp" alt="巴基斯坦客户与甘肃骐霖团队进行胶囊生产线项目会议" width="3000" height="1993" loading="lazy" decoding="async"><figcaption>项目需求与合作方案交流</figcaption></figure>
+                    <figure class="visit-card"><img src="images/customer-visits/pakistan/production-area.webp" alt="巴基斯坦客户参观硬质空心胶囊生产区域" width="3000" height="1993" loading="lazy" decoding="async"><figcaption>参观胶囊生产区域</figcaption></figure>
+                    <figure class="visit-card"><img src="images/customer-visits/pakistan/line-discussion.webp" alt="工程师向巴基斯坦客户讲解硬胶囊生产线结构" width="3000" height="1993" loading="lazy" decoding="async"><figcaption>生产线结构与工艺讲解</figcaption></figure>
+                    <figure class="visit-card"><img src="images/customer-visits/pakistan/group-photo.webp" alt="巴基斯坦客户代表团与甘肃骐霖项目团队合影" width="3000" height="1993" loading="lazy" decoding="async"><figcaption>客户团队与项目人员合影</figcaption></figure>
                 </div>
             </div>
         </section>

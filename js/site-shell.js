@@ -172,6 +172,25 @@
     const currentNavKey = currentPage.navKey || pageKey;
     const toHref = (path) => `${assetPrefix}${path}`;
 
+    // Keep static language pages connected as one multilingual cluster. PHP
+    // pages that already output server-side alternates are left untouched.
+    if (!document.head.querySelector('link[rel="alternate"][hreflang]')) {
+        const publicOrigin = "https://www.gsqilin.cn/";
+        const hreflangs = { zh: "zh-CN", en: "en", ru: "ru" };
+        Object.entries(currentPage.translations).forEach(([languageCode, path]) => {
+            const link = document.createElement("link");
+            link.rel = "alternate";
+            link.hreflang = hreflangs[languageCode];
+            link.href = publicOrigin + path;
+            document.head.appendChild(link);
+        });
+        const defaultLink = document.createElement("link");
+        defaultLink.rel = "alternate";
+        defaultLink.hreflang = "x-default";
+        defaultLink.href = publicOrigin + (currentPage.translations.en || currentPage.translations.zh);
+        document.head.appendChild(defaultLink);
+    }
+
     const languageButtons = languageOrder
         .map(({ key, label }) => {
             const target = currentPage.translations[key] || pageConfig.home.translations[key];

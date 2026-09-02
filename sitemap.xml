@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.gsqilin.cn/index.php</loc><lastmod>2026-08-31</lastmod><priority>1.0</priority></url>
-  <url><loc>https://www.gsqilin.cn/products.php</loc><lastmod>2026-08-31</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.gsqilin.cn/index.php</loc><lastmod>2026-09-02</lastmod><priority>1.0</priority></url>
+  <url><loc>https://www.gsqilin.cn/products.php</loc><lastmod>2026-09-02</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.gsqilin.cn/overseas-factory.php</loc><lastmod>2026-09-01</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.gsqilin.cn/capsule-production.html</loc><lastmod>2026-08-31</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.gsqilin.cn/CNC-machining.html</loc><lastmod>2026-08-31</lastmod><priority>0.8</priority></url>
@@ -14,17 +14,21 @@
   <url><loc>https://www.gsqilin.cn/patents.php</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.gsqilin.cn/information.php</loc><lastmod>2026-08-31</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.gsqilin.cn/contact.php</loc><lastmod>2026-08-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v2&amp;lang=zh</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v4&amp;lang=zh</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-sahcm-v2&amp;lang=zh</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v2&amp;lang=en</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v4&amp;lang=en</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-sahcm-v2&amp;lang=en</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v2&amp;lang=ru</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v4&amp;lang=ru</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-sahcm-v2&amp;lang=ru</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=capsule-mould-components&amp;lang=zh</loc><lastmod>2026-08-31</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=intelligent-control-system&amp;lang=zh</loc><lastmod>2026-08-31</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v2&amp;lang=zh</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v4&amp;lang=zh</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-sahcm-v2&amp;lang=zh</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v2&amp;lang=en</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v4&amp;lang=en</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-sahcm-v2&amp;lang=en</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v2&amp;lang=ru</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-alhcs-v4&amp;lang=ru</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=ql-sahcm-v2&amp;lang=ru</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=capsule-mould-components&amp;lang=zh</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=intelligent-control-system&amp;lang=zh</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=capsule-mould-components&amp;lang=en</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=intelligent-control-system&amp;lang=en</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=capsule-mould-components&amp;lang=ru</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.gsqilin.cn/product-detail.php?slug=intelligent-control-system&amp;lang=ru</loc><lastmod>2026-09-02</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.gsqilin.cn/en/index.html</loc><lastmod>2026-08-31</lastmod><priority>0.9</priority></url>
   <url><loc>https://www.gsqilin.cn/en/products.html</loc><lastmod>2026-08-31</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.gsqilin.cn/en/overseas-factory.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
